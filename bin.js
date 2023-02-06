@@ -28,7 +28,7 @@ async function promptForMissingOptions(options) {
     questions.push({
       type: "input",
       name: "projectName",
-      message: "Please enter a project name",
+      message: "Please enter a project name:",
     });
   }
 

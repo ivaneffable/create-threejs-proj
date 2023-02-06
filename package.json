@@ -20,5 +20,9 @@
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
     "pkg-install": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivaneffable/create-threejs-proj.git"
   }
 }

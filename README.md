@@ -2,9 +2,7 @@
 
 A CLI for creating new [ThreeJS](https://threejs.org/) projects.
 
-<p align="center">
-  <img src="https://github.com/ivaneffable/create-threejs-proj/blob/main/screenshot.png?raw=true" width="800">
-</p>
+<img src="https://github.com/ivaneffable/create-threejs-proj/blob/main/screenshot.png?raw=true" width="500">
 
 ## Usage
 

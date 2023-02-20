@@ -19,7 +19,7 @@ npx create-threejs-proj -i
 ## The ThreeJS project
 
 - The CLI directly creates a Typescript project.
-- We are using Vite, because is fast and easily configurable.
-- ESLint is already configured extending `eslint:recommended` and `plugin:@typescript-eslint/recommended`.
-- The project includes a basic prettier configuration.
+- We are using [Vite](https://vitejs.dev/), because is fast and easily configurable.
+- [ESLint](https://eslint.org/) is already configured extending `eslint:recommended` and `plugin:@typescript-eslint/recommended`.
+- The project includes a basic [prettier](https://prettier.io/) configuration.
 - Git is also initialized for you.

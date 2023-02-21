@@ -15,20 +15,27 @@ async function initGit(cwd) {
   });
 }
 
-function prearePackageJson(options) {
-  let contents = fs.readFileSync(
+async function prearePackageJson(options) {
+  let contents = await fs.promises.readFile(
     `${options.templateDirectory}/package.json`,
     "utf8"
   );
   contents = contents.replace("~NAME~", options.projectName);
-  fs.writeFileSync(`${options.templateDirectory}/package.json`, contents);
+  await fs.promises.writeFile(
+    `${options.templateDirectory}/package.json`,
+    contents
+  );
 }
 
 async function copyTemplateFiles(options) {
-  prearePackageJson(options);
-  return copy(options.templateDirectory, options.projectName, {
+  await prearePackageJson(options);
+  await copy(options.templateDirectory, options.projectName, {
     clobber: false,
   });
+  await fs.promises.rename(
+    `${options.projectName}/gitignore.tmp`,
+    `${options.projectName}/.gitignore`
+  );
 }
 
 export async function createProject(options) {

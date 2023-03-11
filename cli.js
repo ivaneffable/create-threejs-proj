@@ -42,7 +42,7 @@ export async function createProject(options) {
   const currentFileUrl = import.meta.url;
   const templateDir = path.resolve(
     new URL(currentFileUrl).pathname,
-    "../template"
+    `../template/${options.useTypescript ? "typescript" : "javascript"}`
   );
   options.templateDirectory = templateDir;
 

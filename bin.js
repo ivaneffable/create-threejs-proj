@@ -9,7 +9,9 @@ function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
       "--install": Boolean,
+      "--typescript": Boolean,
       "-i": "--install",
+      "-t": "--typescript",
     },
     {
       argv: rawArgs.slice(2),
@@ -19,6 +21,7 @@ function parseArgumentsIntoOptions(rawArgs) {
   return {
     projectName: args._[0],
     runInstall: args["--install"],
+    useTypescript: args["--typescript"],
   };
 }
 
@@ -29,6 +32,15 @@ async function promptForMissingOptions(options) {
       type: "input",
       name: "projectName",
       message: "Please enter a project name:",
+    });
+  }
+
+  if (!options.useTypescript) {
+    questions.push({
+      type: "confirm",
+      name: "useTypescript",
+      message: "Use Typescript?",
+      default: true,
     });
   }
 
